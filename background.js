@@ -60,7 +60,7 @@ function on_translation_response(data, word, tl, last_translation, sendResponse,
 
     translation.succeeded = false;
 
-    if (data.src == tl || Options.do_not_show_oops()) {
+    if ((Options.from_lang() != 'auto' && data.src == tl) || Options.do_not_show_oops()) {
       output = '';
     }
     else {
